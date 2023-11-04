@@ -1,6 +1,6 @@
 # WPFHotariStyledUserControls
 
-`WPFHotariStyledUserControls` is a library of my WPF controls.
+`WPFHotariStyledUserControls` is a library of my bit complex WPF controls.
 
 ## Description
 

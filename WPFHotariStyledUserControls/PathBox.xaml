@@ -1,0 +1,35 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WPFCustomControls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/WPFHotariStyles;component/Generic.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="H_PathBox" TargetType="{x:Type local:PathBox}">
+        <Setter Property="Margin" Value="{StaticResource Margin}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="PathType" Value="FileAndDirectory"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:PathBox}">
+                    <Border x:Name="Border" BorderThickness="{StaticResource BorderThickness}" CornerRadius="{StaticResource CornerRadius}">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{StaticResource ForegroundColor}"/>
+                        </Border.BorderBrush>
+                        <Border.Background>
+                            <SolidColorBrush Color="{StaticResource BackgroundColor}"/>
+                        </Border.Background>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="TextBox" Text="{Binding Path=PathText,RelativeSource={RelativeSource TemplatedParent},Mode=TwoWay}" Style="{StaticResource H_TextBox}" BorderThickness="0" Margin="0" FontSize="{TemplateBinding FontSize}"/>
+                            <Button x:Name="Button" Content="..." Style="{StaticResource H_Button}" BorderThickness="0" Margin="0" DockPanel.Dock="Right" AllowDrop="True" Grid.Column="1"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -69,13 +69,6 @@ namespace WPFCustomControls
         public static readonly RoutedEvent PathTextChangedEvent = EventManager.RegisterRoutedEvent("PathTextChanged", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(PathBox));
         public event RoutedEventHandler PathTextChanged { add => AddHandler(PathTextChangedEvent, value); remove => RemoveHandler(PathTextChangedEvent, value); }
         void RaisePathTextChangedEvent() => RaiseEvent(new RoutedEventArgs(PathBox.PathTextChangedEvent));
-
-        #endregion
-
-        #region == FontSize ==
-
-        public double? FontSize { get => GetValue(FontSizeProperty) as double?; set => SetValue(FontSizeProperty, value); }
-        public static readonly DependencyProperty FontSizeProperty = DependencyProperty.Register("FontSize", typeof(double?), typeof(PathBox), new PropertyMetadata(12d));
 
         #endregion
 

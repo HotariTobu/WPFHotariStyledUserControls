@@ -42,13 +42,6 @@ namespace WPFCustomControls
 
         #endregion
 
-        #region == FontSize ==
-
-        public double? FontSize { get => GetValue(FontSizeProperty) as double?; set => SetValue(FontSizeProperty, value); }
-        public static readonly DependencyProperty FontSizeProperty = DependencyProperty.Register("FontSize", typeof(double?), typeof(PathBox), new PropertyMetadata(12d));
-
-        #endregion
-
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
